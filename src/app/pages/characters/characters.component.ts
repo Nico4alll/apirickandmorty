@@ -25,17 +25,5 @@ export class CharactersComponent implements OnInit {
       }
     );
   }
-
-  deleteCharacter(id: number): void {
-    this.rickMortydbService.deleteCharacter(id).subscribe(
-      () => {
-        // Actualizar la lista de personajes después de la eliminación
-        this.characters = this.characters.filter(character => character.id !== id);
-        console.log('Personaje eliminado');
-      },
-      (error) => {
-        console.error('Error al eliminar el personaje:', error);
-      }
-    );
-  }
+  
 }

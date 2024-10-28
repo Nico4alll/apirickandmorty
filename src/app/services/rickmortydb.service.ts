@@ -14,8 +14,4 @@ export class RickMortydbService {
     return this.http.get<any>(`${this.apiUrl}characters.php`); //url del archivo local :3
   }
 
-  deleteCharacter(id: number): Observable<any> {
-    const url = `${this.apiUrl}characters.php?id=${id}`;
-    return this.http.delete(url);
-  }
 }
