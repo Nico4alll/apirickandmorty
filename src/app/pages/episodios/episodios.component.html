@@ -1,0 +1,14 @@
+<div class="container text-center">
+    <div class="row align-items-start">
+      <div class="col" *ngFor="let episode of episodes">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <h5 class="card-title">{{ episode.name }}</h5>
+            <p class="card-text">
+              Episode: {{ episode.episode }} - Air Date: {{ episode.air_date }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
