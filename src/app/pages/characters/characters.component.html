@@ -4,26 +4,21 @@
   }
 </style>
 
+<!-- src/app/pages/characters/characters.component.html -->
 <div class="container text-center">
-
   <div class="row align-items-start">
-
     <div class="col" *ngFor="let character of characters">
-      
       <div class="card" style="width: 18rem">
-        <img src="{{character.image}}" class="card-img-top" alt="{{ character.nombre }}" />
+        <img src="{{ character.image }}" class="card-img-top" alt="{{ character.name }}" />
         <div class="card-body">
           <h5 class="card-title">{{ character.name }}</h5>
           <p class="card-text">
-            Sexo: {{character.gender}} - 
-            Especie: {{character.species}} - 
-            Estado: {{character.status}} - 
-            Ubicacion: {{character.location}}
+            Sexo: {{ character.gender }} - 
+            Especie: {{ character.species }} - 
+            Estado: {{ character.status }} - 
+            Ubicación: {{ character.location }}
           </p>
-
-          <a href="#" class="btn btn-warning me-2">Editar</a>
-          <a href="#" class="btn btn-danger">Eliminar</a>
-          
+          <button (click)="deleteCharacter(character.id)" class="btn btn-danger">Eliminar</button>
         </div>
       </div>
     </div>
