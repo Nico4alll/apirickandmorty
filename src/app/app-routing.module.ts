@@ -9,6 +9,8 @@ import { AddEditPersonajeComponent } from './pages/add-edit-personaje/add-edit-p
 
 //BD
 import { CharactersComponent } from './pages/characters/characters.component';
+import { EditCharacterComponent } from './pages/edit-character/edit-character.component';
+
 
 
 const routes: Routes = [
@@ -21,6 +23,8 @@ const routes: Routes = [
 
   //BD
   { path: 'characters', component: CharactersComponent }, // Ruta para los personajes
+  { path: 'edit-character/:id', component: EditCharacterComponent }, //Ruta para editar
+
 
 
   { path: '**', pathMatch: 'full', redirectTo: 'home' }

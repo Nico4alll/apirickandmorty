@@ -1,0 +1,9 @@
+<h3>Editar Personaje</h3>
+<label>Nombre: <input [(ngModel)]="character.name" /></label><br />
+<label>Estado: <input [(ngModel)]="character.status" /></label><br />
+<label>Especie: <input [(ngModel)]="character.species" /></label><br />
+<label>Género: <input [(ngModel)]="character.gender" /></label><br />
+<label>Origen: <input [(ngModel)]="character.origin" /></label><br />
+<label>Ubicación: <input [(ngModel)]="character.location" /></label><br />
+<button (click)="saveEdit()" class="btn btn-success">Guardar</button>
+

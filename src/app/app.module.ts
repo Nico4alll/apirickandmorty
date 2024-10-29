@@ -13,6 +13,7 @@ import { EpisodiosComponent } from './pages/episodios/episodios.component';
 import { ListPersonajesComponent } from './pages/list-personajes/list-personajes.component';
 import { AddEditPersonajeComponent } from './pages/add-edit-personaje/add-edit-personaje.component';
 import { CharactersComponent } from './pages/characters/characters.component';
+import { EditCharacterComponent } from './pages/edit-character/edit-character.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CharactersComponent } from './pages/characters/characters.component';
     EpisodiosComponent,
     ListPersonajesComponent,
     AddEditPersonajeComponent,
-    CharactersComponent
+    CharactersComponent,
+    EditCharacterComponent
   ],
   imports: [
     BrowserModule,
