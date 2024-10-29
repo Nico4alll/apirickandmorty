@@ -1,4 +1,3 @@
-// src/app/pages/characters/characters.component.ts
 import { Component, OnInit } from '@angular/core';
 import { RickMortydbService } from 'src/app/services/rickmortydb.service';
 
@@ -9,8 +8,10 @@ import { RickMortydbService } from 'src/app/services/rickmortydb.service';
 })
 export class CharactersComponent implements OnInit {
   characters: any[] = []; // Lista de personajes a mostrar
+  editingCharacter: any = null; // Variable para almacenar el personaje en edición
 
-  constructor(private rickMortydbService: RickMortydbService) {}
+
+  constructor(private rickMortydbService: RickMortydbService) { }
 
   ngOnInit(): void {
     this.loadCharacters(); // Cargar los personajes al iniciar
@@ -41,5 +42,6 @@ export class CharactersComponent implements OnInit {
       }
     );
   }
+
 }
 
