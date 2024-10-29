@@ -29,7 +29,7 @@ export class RickMortydbService {
   // Método para obtener un personaje por su ID
   getCharacterById(id: number): Observable<any> {
     const url = `${this.apiUrl}?id=${id}`;
-    return this.http.get<any>(url);
+    return this.http.get<any>(url);  // Este método debería obtener un solo objeto
   }
 
   // Método para editar un personaje

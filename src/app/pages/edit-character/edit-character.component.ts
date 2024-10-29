@@ -17,14 +17,29 @@ export class EditCharacterComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
+  /* ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.rickMortydbService.getCharacterById(Number(id)).subscribe((data) => {
         this.character = data;
       });
     }
-  }
+  } */
+
+    ngOnInit(): void {
+      const id = this.route.snapshot.paramMap.get('id');
+      if (id) {
+        this.rickMortydbService.getCharacterById(Number(id)).subscribe(
+          (data) => {
+            this.character = data;  // Asigna los datos del personaje
+            console.log(this.character);  // Opcional: verifica en la consola si los datos están llegando
+          },
+          (error) => {
+            console.error('Error al obtener el personaje:', error);
+          }
+        );
+      }
+    }
 
   saveEdit(): void {
     this.rickMortydbService.updateCharacter(this.character.id, this.character).subscribe(() => {
