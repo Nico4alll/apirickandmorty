@@ -17,15 +17,6 @@ export class EditCharacterComponent implements OnInit {
     private router: Router
   ) { }
 
-  /* ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.rickMortydbService.getCharacterById(Number(id)).subscribe((data) => {
-        this.character = data;
-      });
-    }
-  } */
-
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {

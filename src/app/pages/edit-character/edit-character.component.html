@@ -1,9 +1,36 @@
 <h3>Editar Personaje</h3>
-<label>Nombre: <input [(ngModel)]="character.name" /></label><br />
-<label>Estado: <input [(ngModel)]="character.status" /></label><br />
-<label>Especie: <input [(ngModel)]="character.species" /></label><br />
-<label>Género: <input [(ngModel)]="character.gender" /></label><br />
-<label>Origen: <input [(ngModel)]="character.origin" /></label><br />
-<label>Ubicación: <input [(ngModel)]="character.location" /></label><br />
-<button (click)="saveEdit()" class="btn btn-success">Guardar</button>
+<div class="form-container">
+    <img src="{{ character.image }}" class="card-img-top" alt="{{ character.name }}" />
+    <form (ngSubmit)="saveEdit()">
+        <div class="form-group">
+            <label>Nombre:</label>
+            <input type="text" [(ngModel)]="character.name" name="name" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Estado:</label>
+            <input type="text" [(ngModel)]="character.status" name="status" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Especie:</label>
+            <input type="text" [(ngModel)]="character.species" name="species" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Género:</label>
+            <input type="text" [(ngModel)]="character.gender" name="gender" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Origen:</label>
+            <input type="text" [(ngModel)]="character.origin" name="origin" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Ubicación:</label>
+            <input type="text" [(ngModel)]="character.location" name="location" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Imagen:</label>
+            <input type="text" [(ngModel)]="character.image" name="image" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-success">Guardar</button>
+    </form>
+</div>
 
