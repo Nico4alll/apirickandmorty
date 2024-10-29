@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RickMortydbService {
-  private apiUrl = 'http://localhost/apirick&morty/characters.php'; // URL base de la API en PHP
+  private apiUrl = 'http://app.localhost/cecep/apirick&morty/characters.php'; // URL base de la API en PHP
 
   constructor(private http: HttpClient) {}
 
