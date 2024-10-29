@@ -40,6 +40,6 @@ export class RickMortydbService {
         'Content-Type': 'application/json'
       })
     };
-    return this.http.put(url, characterData, httpOptions); // Enviar datos del personaje con PUT
+    return this.http.put(url, characterData, httpOptions);
   }
 }

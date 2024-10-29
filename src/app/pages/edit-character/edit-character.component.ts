@@ -15,7 +15,7 @@ export class EditCharacterComponent implements OnInit {
     private route: ActivatedRoute,
     private rickMortydbService: RickMortydbService,
     private router: Router
-  ) {}
+  ) { }
 
   /* ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -26,25 +26,31 @@ export class EditCharacterComponent implements OnInit {
     }
   } */
 
-    ngOnInit(): void {
-      const id = this.route.snapshot.paramMap.get('id');
-      if (id) {
-        this.rickMortydbService.getCharacterById(Number(id)).subscribe(
-          (data) => {
-            this.character = data;  // Asigna los datos del personaje
-            console.log(this.character);  // Opcional: verifica en la consola si los datos están llegando
-          },
-          (error) => {
-            console.error('Error al obtener el personaje:', error);
-          }
-        );
-      }
+  ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.rickMortydbService.getCharacterById(Number(id)).subscribe(
+        (data) => {
+          this.character = data;  // Asigna los datos del personaje
+          console.log(this.character);  // Opcional: verifica en la consola si los datos están llegando
+        },
+        (error) => {
+          console.error('Error al obtener el personaje:', error);
+        }
+      );
     }
+  }
 
   saveEdit(): void {
-    this.rickMortydbService.updateCharacter(this.character.id, this.character).subscribe(() => {
-      console.log('Personaje actualizado');
-      this.router.navigate(['/characters']);
-    });
+    console.log('Datos del personaje a actualizar:', this.character);
+    this.rickMortydbService.updateCharacter(this.character.id, this.character).subscribe(
+      (response) => {
+        console.log('Respuesta del servidor:', response);
+        this.router.navigate(['/characters']);
+      },
+      (error) => {
+        console.error('Error al actualizar personaje:', error);
+      }
+    );
   }
 }
